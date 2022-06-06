@@ -745,49 +745,6 @@ export default {
     file() {
       this.fileToJSON();
     },
-    "$store.state.selectDefinitionNode"() {
-      let yCoord = 0;
-      let notRoot = false;
-      let firstHyphenIndex = 0;
-      let secondHyphenIndex = 0;
-      let nameRefOfRoot = "";
-
-      if (!this.$store.state.nameRef.includes("root-")) {
-        notRoot = true;
-        firstHyphenIndex = this.$store.state.nameRef.indexOf("-");
-        secondHyphenIndex = this.$store.state.nameRef.indexOf(
-          "-",
-          firstHyphenIndex + 1
-        );
-        nameRefOfRoot =
-          "root-" +
-          this.$store.state.nameRef.slice(0, firstHyphenIndex + 1) +
-          this.$store.state.nameRef.slice(secondHyphenIndex + 1);
-      }
-
-      if (this.$store.state.selectDefinitionNode == true && notRoot) {
-        if (
-          this.$store.state.selectDefinitionNode == true &&
-          this.$store.state.nodeType != "object"
-        ) {
-          yCoord = this.$refs[nameRefOfRoot][0].$el.offsetTop;
-
-          this.$refs.treeContainer.scrollTop = yCoord - 200;
-          this.$store.commit("toggleSelectDefinitionNode");
-          this.$store.state.nameRef = nameRefOfRoot;
-        } else if (
-          this.$store.state.selectDefinitionNode == true &&
-          this.$store.state.nodeType == "object"
-        ) {
-          yCoord = this.$refs[nameRefOfRoot][0].$el.offsetTop;
-
-          this.$refs.treeContainer.scrollTop = yCoord - 200;
-          this.$store.state.nameRef = nameRefOfRoot;
-          this.$store.commit("toggleSelectDefinitionNode");
-        }
-        this.$store.state.nodeParent = "root";
-      }
-    },
     "$store.state.inSTDTab"() {
       this.numOfElem = 50;
       this.$store.state.treeSearchTerm = "";

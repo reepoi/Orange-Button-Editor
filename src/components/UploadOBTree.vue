@@ -510,7 +510,6 @@ export default {
       }
     },
     toggleSelect() {
-      this.$store.commit("toggleSelectDefinitionNode");
       this.$store.commit("showDetailedView");
 
       this.$store.commit({

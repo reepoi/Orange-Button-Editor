@@ -60,17 +60,10 @@
       <div class="detailed-view-buttons">
         <span v-if="$store.state.inOASTab">
           <b-button
-            v-if="$store.state.nodeParent == 'root' && $store.state.viewerMode == 'Edit Mode'"
+            v-if="$store.state.viewerMode == 'Edit Mode'"
             variant="primary"
             size="sm"
             @click="showEditNodeView"
-            :disabled="!$store.state.defnIsLocal"
-          >Edit definition</b-button>
-          <b-button
-            v-else-if="$store.state.nodeParent != 'root' && $store.state.viewerMode == 'Edit Mode'"
-            variant="primary"
-            size="sm"
-            v-b-modal.modal-edit-node
             :disabled="!$store.state.defnIsLocal"
           >Edit definition</b-button>
           <b-button variant="primary" size="sm" @click="exportSampleJSON" v-if="$store.state.nodeParent == 'root'
@@ -100,19 +93,6 @@
       @ok="deleteNode($store.state.isSelected)"
     >
       <span v-html="deleteWarning"></span>
-    </b-modal>
-    <b-modal
-      id="modal-edit-node"
-      title="Edit member?"
-      ref="edit-modal-warning"
-      centered
-      no-stacking
-      @ok="showEditNodeView()"
-    >
-      <p>
-        This {{ $store.state.nodeType }} is a member and cannot be edited.
-        <br />Would you like to edit the definition?
-      </p>
     </b-modal>
   </div>
 </template>

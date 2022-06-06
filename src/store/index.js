@@ -25,7 +25,6 @@ export default new Vuex.Store({
     nodeEnum: null,
     nameRef: null,
     listOfDefinitionElements: [],
-    selectDefinitionNode: false,
     showCreateDefinitionForm: false,
     showLoadInDefinitionForm: false,
     nodeToAddToObject: "",
@@ -234,9 +233,6 @@ export default new Vuex.Store({
     /*
       Tree view handling
     */
-    toggleSelectDefinitionNode(state) {
-      state.selectDefinitionNode = false;
-    },
     selectNode(state, payload) {
       state.isSelected = payload.nodeName;
       state.nodeName = payload.nodeName;
@@ -369,7 +365,6 @@ export default new Vuex.Store({
     },
     showEditNodeView(state) {
       state.activeEditorView = "EditDefinition"
-      state.selectDefinitionNode = true;
     },
     showCreateDefinitionForm(state) {
       state.activeEditorView = "CreateDefinitionForm"
