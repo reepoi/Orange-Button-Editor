@@ -726,6 +726,8 @@ export function formatSampleValueValue({ value, selectedOpenAPIType, isOBTaxonom
     value = value === 'true';
   } else if (type === 'number' || type === 'integer') {
     value = parseFloat(value);
+  } else if (type === 'string') {
+    value = value.trim();
   }
   if (isOBTaxonomyElementArray) {
     value = [value];
