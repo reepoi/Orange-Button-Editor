@@ -60,7 +60,7 @@
         "description": "End time of a measurement period for the instance element",
         "x-ob-usage-tips": ""
       },
-      "TaxonomyElementValueInteger": {
+      "TaxonomyElementInteger": {
         "type": "object",
         "properties": {
           "Value": {
@@ -84,7 +84,7 @@
         },
         "x-ob-usage-tips": ""
       },
-      "TaxonomyElementValueString": {
+      "TaxonomyElementString": {
         "type": "object",
         "properties": {
           "Value": {
@@ -108,7 +108,7 @@
         },
         "x-ob-usage-tips": ""
       },
-      "TaxonomyElementValueArrayInteger": {
+      "TaxonomyElementArrayInteger": {
         "type": "object",
         "properties": {
           "Value": {
@@ -131,7 +131,7 @@
           }
         }
       },
-      "TaxonomyElementValueArrayString": {
+      "TaxonomyElementArrayString": {
         "type": "object",
         "properties": {
           "Value": {
@@ -155,10 +155,10 @@
         },
         "x-ob-usage-tips": ""
       },
-      "OBElementValueString": {
+      "OBElementString": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueString"
+            "$ref": "#/components/schemas/TaxonomyElementString"
           },
           {
             "type": "object",
@@ -171,10 +171,10 @@
           }
         ]
       },
-      "OBElementEnumValueString": {
+      "OBElementEnumString": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueString"
+            "$ref": "#/components/schemas/TaxonomyElementString"
           },
           {
             "type": "object",
@@ -187,10 +187,10 @@
           }
         ]
       },
-      "OBElementUnitValueInteger": {
+      "OBElementUnitInteger": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueInteger"
+            "$ref": "#/components/schemas/TaxonomyElementInteger"
           },
           {
             "type": "object",
@@ -204,10 +204,10 @@
           }
         ]
       },
-      "OBElementValueArrayString": {
+      "OBElementArrayString": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueArrayString"
+            "$ref": "#/components/schemas/TaxonomyElementArrayString"
           },
           {
             "type": "object",
@@ -223,10 +223,10 @@
           }
         ]
       },
-      "OBElementEnumValueArrayString": {
+      "OBElementEnumArrayString": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueArrayString"
+            "$ref": "#/components/schemas/TaxonomyElementArrayString"
           },
           {
             "type": "object",
@@ -242,10 +242,10 @@
           }
         ]
       },
-      "OBElementUnitValueArrayInteger": {
+      "OBElementUnitArrayInteger": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/TaxonomyElementValueArrayInteger"
+            "$ref": "#/components/schemas/TaxonomyElementArrayInteger"
           },
           {
             "type": "object",
@@ -261,28 +261,28 @@
           }
         ]
       },
-      "OBObjectOnlyOBElementsValueString": {
+      "OBObjectOnlyOBElementsString": {
         "type": "object",
         "description": "Defines an OB Object with array and non-array valued OB Elements.",
         "properties": {
-          "OBElementValueString": {
-            "$ref": "#/components/schemas/OBElementValueString"
+          "OBElementString": {
+            "$ref": "#/components/schemas/OBElementString"
           },
-          "OBElementEnumValueString": {
-            "$ref": "#/components/schemas/OBElementEnumValueString"
+          "OBElementEnumString": {
+            "$ref": "#/components/schemas/OBElementEnumString"
           },
-          "OBElementUnitValueInteger": {
-            "$ref": "#/components/schemas/OBElementUnitValueInteger"
+          "OBElementUnitInteger": {
+            "$ref": "#/components/schemas/OBElementUnitInteger"
           },
-          "OBElementValueArrayString": {
-            "$ref": "#/components/schemas/OBElementValueArrayString"
+          "OBElementArrayString": {
+            "$ref": "#/components/schemas/OBElementArrayString"
           }
         }
       },
       "OBObjectArray": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/OBObjectOnlyOBElementsValueString"
+          "$ref": "#/components/schemas/OBObjectOnlyOBElementsString"
         },
         "x-ob-usage-tips": ""
       },
@@ -290,13 +290,29 @@
         "type": "object",
         "description": "Defines an OB Object.",
         "properties": {
-          "OBObjectOnlyOBElementsValueString": {
-            "$ref": "#/components/schemas/OBObjectOnlyOBElementsValueString"
+          "OBObjectOnlyOBElementsString": {
+            "$ref": "#/components/schemas/OBObjectOnlyOBElementsString"
           },
           "OBObjectArray": {
             "$ref": "#/components/schemas/OBObjectArray"
           }
         }
+      },
+      "OBObjectInheritance": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/OBObject"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Object with inheritance from another OB Object.",
+            "properties": {
+              "OBElementUnitArrayInteger": {
+                "$ref": "#/components/schemas/OBElementUnitArrayInteger"
+              }
+            }
+          }
+        ]
       }
     }
   },
