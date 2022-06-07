@@ -1,0 +1,350 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.1.7",
+    "title": "OB OpenAPI Test Taxonomy",
+    "description": "OB OpenAPI Definitions For Orange Button."
+  },
+  "paths": {},
+  "servers": [],
+  "components": {
+    "schemas": {
+      "ValueString": {
+        "type": "string",
+        "description": "Value for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "ValueInteger": {
+        "type": "integer",
+        "description": "Value for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "ValueArrayString": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Value for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "ValueArrayInteger": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        },
+        "description": "Value for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "Unit": {
+        "type": "string",
+        "description": "Unit of the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "Decimals": {
+        "type": "string",
+        "description": "Decimals of the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "Precision": {
+        "type": "string",
+        "description": "Precision of the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "StartTime": {
+        "type": "string",
+        "description": "Start time of a measurement period for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "EndTime": {
+        "type": "string",
+        "description": "End time of a measurement period for the instance element",
+        "x-ob-usage-tips": ""
+      },
+      "TaxonomyElementValueInteger": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "$ref": "#/components/schemas/ValueInteger"
+          },
+          "Unit": {
+            "$ref": "#/components/schemas/Unit"
+          },
+          "Decimals": {
+            "$ref": "#/components/schemas/Decimals"
+          },
+          "Precision": {
+            "$ref": "#/components/schemas/Precision"
+          },
+          "StartTime": {
+            "$ref": "#/components/schemas/StartTime"
+          },
+          "EndTime": {
+            "$ref": "#/components/schemas/EndTime"
+          }
+        },
+        "x-ob-usage-tips": ""
+      },
+      "TaxonomyElementValueString": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "$ref": "#/components/schemas/ValueString"
+          },
+          "Unit": {
+            "$ref": "#/components/schemas/Unit"
+          },
+          "Decimals": {
+            "$ref": "#/components/schemas/Decimals"
+          },
+          "Precision": {
+            "$ref": "#/components/schemas/Precision"
+          },
+          "StartTime": {
+            "$ref": "#/components/schemas/StartTime"
+          },
+          "EndTime": {
+            "$ref": "#/components/schemas/EndTime"
+          }
+        },
+        "x-ob-usage-tips": ""
+      },
+      "TaxonomyElementValueArrayInteger": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "$ref": "#/components/schemas/ValueArrayInteger"
+          },
+          "Unit": {
+            "$ref": "#/components/schemas/Unit"
+          },
+          "Decimals": {
+            "$ref": "#/components/schemas/Decimals"
+          },
+          "Precision": {
+            "$ref": "#/components/schemas/Precision"
+          },
+          "StartTime": {
+            "$ref": "#/components/schemas/StartTime"
+          },
+          "EndTime": {
+            "$ref": "#/components/schemas/EndTime"
+          }
+        }
+      },
+      "TaxonomyElementValueArrayString": {
+        "type": "object",
+        "properties": {
+          "Value": {
+            "$ref": "#/components/schemas/ValueArrayString"
+          },
+          "Unit": {
+            "$ref": "#/components/schemas/Unit"
+          },
+          "Decimals": {
+            "$ref": "#/components/schemas/Decimals"
+          },
+          "Precision": {
+            "$ref": "#/components/schemas/Precision"
+          },
+          "StartTime": {
+            "$ref": "#/components/schemas/StartTime"
+          },
+          "EndTime": {
+            "$ref": "#/components/schemas/EndTime"
+          }
+        },
+        "x-ob-usage-tips": ""
+      },
+      "OBElementValueString": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueString"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a non-array Value.",
+            "x-ob-item-type": "ItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Value": "a string"
+            }
+          }
+        ]
+      },
+      "OBElementEnumValueString": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueString"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a non-array Value.",
+            "x-ob-item-type": "EnumItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Value": "Enum1"
+            }
+          }
+        ]
+      },
+      "OBElementUnitValueInteger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueInteger"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a non-array Value.",
+            "x-ob-item-type": "UnitItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Unit": "Unit1",
+              "Value": 1
+            }
+          }
+        ]
+      },
+      "OBElementValueArrayString": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueArrayString"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a array Value.",
+            "x-ob-item-type": "ItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Unit": "a unit",
+              "Value": [
+                "a string"
+              ]
+            }
+          }
+        ]
+      },
+      "OBElementEnumValueArrayString": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueArrayString"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a array Value.",
+            "x-ob-item-type": "EnumItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Unit": "Unit1",
+              "Value": [
+                "Enum1"
+              ]
+            }
+          }
+        ]
+      },
+      "OBElementUnitValueArrayInteger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementValueArrayInteger"
+          },
+          {
+            "type": "object",
+            "description": "Defines an OB Element with a array Value.",
+            "x-ob-item-type": "UnitItemType",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Unit": "Unit1",
+              "Value": [
+                1
+              ]
+            }
+          }
+        ]
+      },
+      "OBObjectOnlyOBElementsValueString": {
+        "type": "object",
+        "description": "Defines an OB Object with array and non-array valued OB Elements.",
+        "properties": {
+          "OBElementValueString": {
+            "$ref": "#/components/schemas/OBElementValueString"
+          },
+          "OBElementEnumValueString": {
+            "$ref": "#/components/schemas/OBElementEnumValueString"
+          },
+          "OBElementUnitValueInteger": {
+            "$ref": "#/components/schemas/OBElementUnitValueInteger"
+          },
+          "OBElementValueArrayString": {
+            "$ref": "#/components/schemas/OBElementValueArrayString"
+          }
+        }
+      },
+      "OBObjectArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OBObjectOnlyOBElementsValueString"
+        },
+        "x-ob-usage-tips": ""
+      },
+      "OBObject": {
+        "type": "object",
+        "description": "Defines an OB Object.",
+        "properties": {
+          "OBObjectOnlyOBElementsValueString": {
+            "$ref": "#/components/schemas/OBObjectOnlyOBElementsValueString"
+          },
+          "OBObjectArray": {
+            "$ref": "#/components/schemas/OBObjectArray"
+          }
+        }
+      }
+    }
+  },
+  "x-ob-item-types": {
+    "ItemType": {
+      "description": "Item type"
+    },
+    "EnumItemType": {
+      "description": "Defines enums",
+      "enums": {
+        "Enum1": {
+          "label": "Enum 1",
+          "description": "Enum one"
+        },
+        "Enum2": {
+          "label": "Enum 2",
+          "description": "Enum two"
+        }
+      }
+    },
+    "UnitItemType": {
+      "description": "Defines units",
+      "units": {
+        "Unit1": {
+          "label": "Unit 1",
+          "description": "Unit one"
+        },
+        "Unit2": {
+          "label": "Unit 2",
+          "description": "Unit two"
+        }
+      }
+    }
+  },
+  "x-ob-item-type-groups": {
+    "Enum1Group": {
+      "type": "#/x-ob-item-types/EnumItemType",
+      "description": "Only one",
+      "group": [
+        "Enum1"
+      ]
+    },
+    "Unit1Group": {
+      "type": "#/x-ob-item-types/UnitItemType",
+      "description": "Only one",
+      "group": [
+        "Unit1"
+      ]
+    }
+  }
+}
