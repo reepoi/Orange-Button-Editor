@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import CreateItemType from "@/components/ItemTypes/CreateItemType"
-import CreateItemTypeGroup from "@/components/ItemTypes/CreateItemTypeGroup"
-import EditItemType from "@/components/ItemTypes/EditItemType"
-import EditItemTypeGroup from "@/components/ItemTypes/EditItemTypeGroup"
-import ViewAllItemTypes from "@/components/ItemTypes/ViewAllItemTypes"
-import ViewAllItemTypeGroups from "@/components/ItemTypes/ViewAllItemTypeGroups"
-import DeleteItemType from "@/components/ItemTypes/DeleteItemType"
-import DeleteItemTypeGroup from "@/components/ItemTypes/DeleteItemTypeGroup"
+import CreateItemType from "./CreateItemType"
+import CreateItemTypeGroup from "./CreateItemTypeGroup"
+import EditItemType from "./EditItemType"
+import EditItemTypeGroup from "./EditItemTypeGroup"
+import ViewAllItemTypes from "./ViewAllItemTypes"
+import ViewAllItemTypeGroups from "./ViewAllItemTypeGroups"
+import DeleteItemType from "./DeleteItemType"
+import DeleteItemTypeGroup from "./DeleteItemTypeGroup"
 
 export default {
   components: {

@@ -32,11 +32,13 @@ describe.each([
   [getSVData({ Value: 's' }), 'string', true, ['s']]
 ])
 ('correct sample value JSON from CreateDefinitionForm and EditSampleValue form', (SVData, OpenAPIType, isArray, expectedValue) => {
-  const sampleValueJSON = miscUtilities.buildSampleValueObject({
+  let sampleValueJSON;
+  beforeEach(() => {
+  sampleValueJSON = miscUtilities.buildSampleValueObject({
     sampleValuePrimitives: SVData,
     selectedOpenAPIType: OpenAPIType,
     isOBTaxonomyElementArray: isArray });
-
+  });
   test(`all primitives present. Value: ${SVData.Value.value}`, () => {
     expect.assertions(SVPrimitives().length)
     SVPrimitives()
